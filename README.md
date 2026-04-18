@@ -49,7 +49,7 @@ A core feature of APEX is immediate audible feedback. However, modern browsers h
 > "According to both MDN Web Docs and Chrome's Autoplay Policy, a website cannot play unmuted audio upon page arrival via events like hover or mouseenter until a user gesture (such as a click or tap) has occurred first." 
 > — **[MDN Web Docs: Autoplay Policy](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay)**
 
-*  **The APEX hurdles:**  To overcome this hurdle, I added style="cursor: pointer; to the splash container: <div id="splash-container"  style="cursor: pointer;">.  This unlocks the browser's audio context but requires the user to click anywhere on the screen to initiate the audio. Once this link is established, all subsequent `mouseenter` events, hovers, or spatial sounds are permitted to function seamlessly across the app.
+*  **The APEX hurdles:**  To overcome this hurdle, I added style="cursor: pointer; to the splash container: <div id="splash-container"  style="cursor: pointer;">  This unlocks the browser's audio context but requires the user to click anywhere on the screen to initiate the audio. Once this link is established, all subsequent `mouseenter` events, hovers, or spatial sounds arepermitted to function seamlessly across the app. 
 
 
 *  **The Background:** The animated background was adopted by a lesson on web.dev: https://web.dev/learn/accessibility/motion. I took the SCSS code and used AI to convert the code to CSS, then I used the html code to apply the animated background and added a reveal logic to reveal the audio wallet using log-in access. Password demo.
