@@ -1455,6 +1455,24 @@ cryptoAmountInput.addEventListener('mouseenter', () => {
     window.currentAudio.play().catch(err => console.log("Missing: input_deposit.mp3"));
 });
 
+// Targets shares input
+const cryptoSharesInput = document.getElementById('crypto-shares');
+
+if (cryptoSharesInput) {
+    cryptoSharesInput.addEventListener('mouseenter', () => {
+        // 1. Kill any current audio immediately
+        if (window.currentAudio) {
+            window.currentAudio.pause();
+            window.currentAudio.currentTime = 0;
+        }
+
+        // 2. Play the instruction: "Enter shares to buy"
+        window.currentAudio = new Audio(`audio/${activeVoice}/crypto_shares.mp3`);
+        window.currentAudio.play().catch(err => console.log("Missing: crypto_shares.mp3"));
+    });
+}
+
+
 // A. DROPDOWN HOVER/TOUCH (The Prompt)
 const handleDropdownPrompt = () => {
     // Only play if we aren't already in the middle of selecting a coin

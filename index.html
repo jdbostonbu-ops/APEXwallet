@@ -289,7 +289,6 @@
   </div>
 </div>
 <!------------------ Program new bill payment -------------------------->
-<!------------------ Program new bill payment -------------------------->
 <div id="add-bill-layer" class="hidden-panel">
    <div class="content modal-form" style="max-width: 500px !important;">
     <!-- Added aria-label for better accessibility on the icon button -->
@@ -302,11 +301,11 @@
         Preview: <span id="preview-text">Waiting for input...</span>
       </div>
 
-      <!-- FIX 1: Linked 'for' to 'new-biller-name' -->
+      <!-- FIX 1: Linked 'for' to 'new-biller-name' to match id because MDN said you can't use labels without a 'for' attribute to eliminate the node violation shown in the console -->
       <label class="voice-label" for="new-biller-name">Biller Name</label>
       <input type="text" id="new-biller-name" class="voice-dropdown" placeholder="e.g. Netflix">
       
-      <!-- FIX 2: Linked 'for' to 'new-biller-acc' -->
+      <!-- FIX 2: Linked 'for' to 'new-biller-acc' because MDN said you can't use labels without a 'for' attribute to eliminate the node violation shown in the console-->
       <label class="voice-label" for="new-biller-acc" style="display: block; margin-top: 10px;">Account Number</label>
       <input type="text" id="new-biller-acc" class="voice-dropdown" placeholder="123-456">
       
@@ -333,7 +332,6 @@
       <p><strong>Ending Balance:</strong> $42,900.50</p>
     </div>
 
-    <!-- The 3 Action Buttons -->
     <div class="zone-stack">
       <button id="read-yes" class="spatial-btn" data-label="read-yes" style="border-left: 8px solid #00ff87;">Read Statement</button>
     </div>
@@ -344,19 +342,18 @@
 <!------------------- CRYPTO INVESTMENT PANEL -------------------------------->
 <div id="crypto-layer" class="hidden-panel">
   <div class="modal-form" style="border-left: 10px solid #66cc33; border-radius: 20px; overflow: hidden; width: 95%; max-width: 600px; min-height: 500px; padding: 20px;">
-    <!-- Accessibility Fix: Added aria-label for icon-style button -->
+   
     <button class="spatial-btn close-c" data-label="close" id="close-crypto" aria-label="Close Crypto Market">✕ Close</button>
-    <h2 class="perfect" style="font-size: 35px !important; padding: 1rem;">Crypto Market</h2>   
+    <h2 class="perfect" style="font-size: 25px !important; padding: 1rem;">Crypto Market</h2>   
 
-    <!-- Real-Time Ticker: Restored Unique IDs -->
-    <p style="margin: 0; font-size: 1.5rem; padding: 5px 0;">Bitcoin: <span id="btc-val">Fetching...</span></p>
-    <p style="margin: 0; font-size: 1.5rem; padding: 5px 0;">Ethereum: <span id="eth-val">Fetching...</span></p>
-    <p style="margin: 0; font-size: 1.5rem; padding: 5px 0;">Solana: <span id="sol-val">Fetching...</span></p>
-    <p style="margin: 0; font-size: 1.5rem; padding: 5px 0;">Cardano: <span id="car-val">Fetching...</span></p>
+    <!-- Real-Time Ticker: Unique IDs -->
+    <p style="margin: 0; font-size: 1.0rem; padding: 5px 0;">Bitcoin: <span id="btc-val">Fetching...</span></p>
+    <p style="margin: 0; font-size: 1.0rem; padding: 5px 0;">Ethereum: <span id="eth-val">Fetching...</span></p>
+    <p style="margin: 0; font-size: 1.0rem; padding: 5px 0;">Solana: <span id="sol-val">Fetching...</span></p>
+    <p style="margin: 0; font-size: 1.0rem; padding: 5px 0;">Cardano: <span id="car-val">Fetching...</span></p>
 
-    <!-- Fake Investment Form -->
     <div class="zone-stack">
-      <!-- Accessibility Fix: Changed label to <p> with ID to use aria-labelledby for non-input dropdown -->
+      <!-- Fix: Changed label to <p> with ID to use aria-labelledby for non-input dropdown -->
       <p id="crypto-select-label" class="voice-label" style="color: #333; margin-bottom: 5px;">Select Crypto</p>
       
       <div class="custom-dropdown-container" style="position: relative; margin-bottom: 15px;">
@@ -369,7 +366,6 @@
           Select Crypto
         </div>
         
-        <!-- Restored all data-audio and data-source attributes -->
         <ul id="crypto-list" role="listbox" style="display: none; position: absolute; width: 100%; list-style: none; padding: 0; margin: 0; border: 1px solid #ccc; background: #fff; z-index: 10;">
           <li class="crypto-option" role="option" data-value="btc-val" data-source="bitcoin" data-audio="audio/Bitcoin.mp3" style="padding: 10px; cursor: pointer;">Bitcoin (BTC)</li>
           <li class="crypto-option" role="option" data-value="eth-val" data-source="ethereum" data-audio="audio/Ethereum.mp3" style="padding: 10px; cursor: pointer;">Ethereum (ETH)</li>
@@ -378,10 +374,10 @@
         </ul>
       </div>
 
-      <!-- Accessibility Fix: Added 'for' attribute to match input ID -->
+      <!-- Fix: Added 'for' attribute to match input ID -->
       <label for="crypto-amount" class="voice-label" style="color: #333; display: block;">Amount to Invest ($)</label>
       <input type="number" id="crypto-amount" class="voice-dropdown" placeholder="Enter USD Amount">
-      
+      <input type="number" id="crypto-shares" class="voice-dropdown" style="margin-top: 1px;" placeholder="Enter Shares to Buy">
       <button class="spatial-btn active-focus" data-label="buy-crypto-btn" id="buy-crypto-btn" data-label="confirm_buy" style="width: 100%; margin-top: 15px;">
         Confirm Investment
       </button>
@@ -430,7 +426,6 @@
 
       <input type="file" id="profile-upload" accept="image/*" style="display: none;">
 
-      <!-- ENTRY FIELDS -->
       <!-- FIX: Explicit association with 'for' attribute -->
       <label class="voice-label" for="profile-status-input" style="color: white; display: block; margin-top: 2px;">Status Message</label>
       <input type="text" id="profile-status-input" class="voice-dropdown" placeholder="e.g. Active Now">
@@ -443,7 +438,7 @@
 <!-------------------- SPENDING LIMIT PANEL ------------------------------>
 <div id="limit-layer" class="hidden-panel">
   <div class="content modal-form" style="max-width: 500px !important;">
-    <!-- Added aria-label to the close button for accessibility -->
+  
     <button class="spatial-btn close-i" data-label="close" id="close-limit" aria-label="Close Spend Limits">✕ Close</button>
     <h2 class="perfect" style="font-size: 35px !important; padding: 1rem;">Spend Limits</h2>
     
