@@ -1,7 +1,11 @@
 # APEX Audio Wallet
 
+
 **👤 Author:** Jacqueline  
-**🔗 GitHub:** [jdbostonbu-ops](https://github.com)
+
+**🔗 GitHub Profile:** [Profile Page](https://github.com/jdbostonbu-ops)
+
+** APEX Audio Wallet:** [Visit APEXwallet](https://jdbostonbu-ops.github.io/APEXwallet/)
 
 **APEX** is a high-fidelity, spatial audio wallet created to explore and push the boundaries of **Web Accessibility (A11y)** for visually impaired or visually challenged individuals. By moving away from standard screen-reader reliance, APEX implements a "Sound-First" architecture where navigation is based on spatial memory, high-contrast visuals, and immediate audible feedback. The project serves as a technical exploration into how financial tools can be made more inclusive and intuitive through immersive, non-visual cues.
 
@@ -84,3 +88,4 @@ APEX is built as a **pure front-end application**, ensuring high performance, ze
 
 
 
+ 
