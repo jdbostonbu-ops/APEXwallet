@@ -927,7 +927,8 @@ if (finalConfirmBtn) {
 //------------------ END DEPOSIT PANEL LOGIC ------------------------//
 
 // ------------------ PAY BILLS logic -------------------------------//
-// This line turns "electricbill.mp3" into "Electricbill.mp3"
+
+const fileName = rawFile; // This was added because GitHub changes my audio files to uppercase first letters.
 
 const closeE = document.getElementById('close-bills');
 
