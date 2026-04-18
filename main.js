@@ -133,6 +133,7 @@ const securityLayer = document.getElementById('security-layer');
 buttons.forEach(btn => {
     const handleExplore = (e) => {
         if (e.type === 'touchstart') e.preventDefault();
+
         const label = btn.getAttribute('data-label');
         
         buttons.forEach(b => b.classList.remove('active-focus'));
@@ -928,8 +929,6 @@ if (finalConfirmBtn) {
 
 // ------------------ PAY BILLS logic -------------------------------//
 
-const fileName = rawFile; // This was added because GitHub changes my audio files to uppercase first letters.
-
 const closeE = document.getElementById('close-bills');
 
 const billsCloseFocus = () => {
@@ -1016,11 +1015,10 @@ bOptions.forEach(opt => {
     opt.addEventListener('mouseenter', () => {
         // Pull filename from data-audio (e.g., electricbill.mp3)
         const rawFile = opt.getAttribute('data-audio'); 
-        
-        // Capitalize first letter (Electricbill.mp3) to match crypto logic
-        const fileName = rawFile.charAt(0).toUpperCase() + rawFile.slice(1);
 
-        playBillAudio(fileName);
+           if (rawFile) {
+            playBillAudio(rawFile);
+        }
         
         // VISUAL: Light up this option and dim others
         bOptions.forEach(o => o.style.backgroundColor = "transparent");
