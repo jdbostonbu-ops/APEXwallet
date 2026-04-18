@@ -927,6 +927,8 @@ if (finalConfirmBtn) {
 //------------------ END DEPOSIT PANEL LOGIC ------------------------//
 
 // ------------------ PAY BILLS logic -------------------------------//
+// This line turns "electricbill.mp3" into "Electricbill.mp3"
+
 const closeE = document.getElementById('close-bills');
 
 const billsCloseFocus = () => {
