@@ -20,7 +20,7 @@ The following table highlights the behavioral differences between Safari and Chr
 
 | Feature | Safari (iOS) | Chrome (iOS) |
 | :--- | :--- | :--- |
-| **Panel Alignment** | ✅ Centered Automatically for both browsers | 
+| **Panel Alignment** | ✅ Centered Automatically for both browsers | ✅ Centered Automatically for both browsers |
 | **PDF Behavior** | ❌  **Blocked** (Safari iOS) |
 | **PDF Behavior** |  | ✅ **Opens Automatically** (Google Chrome) |
 | **Audio** | ❌ Blocked on panel buttons |  ❌ Audio is inconsistent with both browsers.
