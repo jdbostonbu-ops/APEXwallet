@@ -26,7 +26,7 @@ The following table highlights the behavioral differences between Safari and Chr
 | **Audio** | ❌ Blocked on panel buttons |  ❌ Audio is inconsistent with both browsers.
 
 | Feature | Touch Devices |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | **iPad / Tablets** |  ❌ Partial | **Touch interaction** However, panel buttons and audio may be disabled depending on browser "Pop-up Blocker" settings. |
 | **iPhone (iOS)** |  ❌ Partial | **Mobile touch interaction** Spatial awareness is active, but audio is blocked in all pop up panels, and PDF viewers can obstruct panel interactions. This may be an iPhone settings issue.|
 
