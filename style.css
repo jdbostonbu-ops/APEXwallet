@@ -1,0 +1,617 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/********** VOICE PREFERENCE DROP DOWN **************/
+.voice-dropdown {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  font-size: 1.1rem;
+  background-color: var(--rich-black);
+  color: #00ff87;;
+  border: 2px solid #00ffcc; /* High-contrast border */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.voice-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Highlight for the Dropdown itself */
+.voice-dropdown:focus {
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
+  outline: none;
+}
+/**************END DROP DOWN ************/
+
+/************** Standard state **********/
+.spatial-btn {
+  border: 4px solid #333;
+  transition: all 0.2s ease-in-out;
+}
+
+/****** The Active Highlight - triggered by touch/hover ****/
+.active-focus {
+  border-color: #00ffcc !important; /* Bright Neon Cyan */
+  box-shadow: 0 0 20px #00ffcc, inset 0 0 10px #00ffcc;
+  transform: scale(1.02); /* Slight grow effect */
+  background-color: #002b2b; /* Subtle dark teal shift */
+  z-index: 10;
+}
+
+/*************** Buttons *************************/
+:root {
+  
+  --true-canary: #FFD700;    /* Solid Golden Canary */
+  --rich-black: #121212;     /* Professional Matte Black */
+  --warm-gold: #FFC107;      /* Electric Canary Yellow */
+  --deep-ink: #0a0a0a;
+  --bg-dark: #0f0c29;
+  --glass: rgba(255, 255, 255, 0.1);
+  --neon-cyan: #00f2fe;
+  --neon-pink: #fb36f4;
+  --neon-yellow: #f9f047;
+  --canary: #FFD700;
+  --ink: #121212;
+  --playState: running;
+}
+
+body {
+  color: var(--rich-black);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+  margin: 0;
+  padding:0;
+  background-color: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.apex-wallet.active {
+  background: transparent !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  min-height: 100vh;
+  
+}
+
+
+#splash-container {
+  position: fixed;
+  inset: 0;
+  z-index: 9997; 
+   background: transparent; /* Or your rainbow background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s;
+
+}
+
+/* The Wallet: Stays silent and unclickable until revealed */
+.apex-wallet.reveal-ready {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  
+  pointer-events: none; /* Crucial: stops buttons from announcing on touch */
+  transition: opacity 1s ease;
+  
+}
+
+
+.spatial-btn {
+  background: whitesmoke;
+  color: black; 
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  
+  border-radius: 20px;
+  padding: 20px;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The Welcoming Neon Highlight */
+.active-focus {
+  border-color: #FFFFFF !important;
+  box-shadow: 0 0 30px var(--neon-cyan);
+  transform: translateY(-5px) scale(1.05);
+  background:#086cff ;
+  color: whitesmoke;
+
+}
+
+/* Specific colorful accents for spatial memory */
+/* Core Navigation & Status */
+[data-label="overview"] { border-left: 8px solid #086cff ; } 
+[data-label="balance"]  { border-left: 8px solid #086cff ; }
+
+/* Money In/Out (Action Grid) */
+[data-label="send"]     { border-left: 8px solid #086cff ; } 
+[data-label="deposit"]  { border-left: 8px solid #086cff ; }
+[data-label="paybills"]      { border-left: 8px solid #086cff ; }
+[data-label="withdraw"] { border-left: 8px solid #086cff ; } 
+
+/* Specialized Services */
+[data-label="invest"]   { border-left: 8px solid #086cff ; } 
+[data-label="newpay"]   { border-left: 8px solid #086cff ; }
+
+/* Utility & Support (Bottom Bar) */
+[data-label="logout"]   { border-left: 8px solid #086cff ; } 
+[data-label="security"] { border-left: 8px solid #086cff ; }
+
+/* New Utility & Personal Sections */
+[data-label="alert"]     { border-left: 8px solid #086cff ; } 
+[data-label="profile"]    { border-left: 8px solid #086cff  } 
+[data-label="statements"] { border-left: 8px solid #086cff ; } 
+[data-label="limit"]      { border-left: 8px solid #086cff ; } 
+[data-label="search"]     { border-left: 8px solid #086cff ; } 
+
+
+[data-label="confirm"] 
+
+.confirm-btn{
+  color: black;
+  border: none;
+  font-size: 16px;
+  margin-left: 8px;
+  border-radius: none;
+
+  border-color: #00f2fe !important; /* Neon Cyan */
+  box-shadow: 0 0 30px #00f2fe;
+  background: rgba(0, 242, 254, 0.15);
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+
+}
+
+/* Input Field: Hot Pink (Focus State) */
+#pass-input:focus {
+  border-color: #ff0076;
+  box-shadow: 0 0 20px #ff0076;
+}
+
+#login-trigger.active-focus {
+  border-color: #00f2fe !important; /* Neon Cyan */
+  box-shadow: 0 0 30px #00f2fe;
+  background: rgba(0, 242, 254, 0.15);
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/************* Tablets and phones ********************/
+@media (min-width: 768px) {
+  .zone-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 across on tablets */
+  }
+  
+  .spatial-btn {
+    min-height: 100px;
+    font-size: 1.2rem;
+  }
+}
+
+/* --- LAYOUT ENGINE (Add this!) --- */
+.apex-wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(12px); /* Optional: makes the app look more premium */
+  border-radius: 2em;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  margin: 40px auto;
+}
+ .content {
+
+/* Re-adding the large white transparent box */
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 1em;
+box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.2);
+
+
+/* Positioning */
+
+left: 50%;
+position: fixed;
+top: 50%;
+transform: translate(-50%, -50%);
+z-index: 1000;
+
+
+/* Ensure it doesn't shrink too small */
+
+width: 90%;
+max-width: 800px;
+text-align: center;
+
+}
+
+
+.zone-row, .zone-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 across */
+  gap: 10px;
+}
+
+.zone-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2x2 on phones */
+  gap: 15px;
+}
+
+.zone-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.balance-btn {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* --- END LAYOUT ENGINE --- */
+
+
+
+/* Root variables replace SCSS variables */
+:root {
+  --delay: 1s;
+  --playState: running;
+}
+
+/* Rainbow background - Using your original #66cc33 and #086cff */
+.bg-rainbow {
+  animation: slide 9s ease-in-out infinite alternate;
+  animation-play-state: var(--playState);
+  background-image: linear-gradient(-60deg, #66cc33 50%, #086cff 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: 0;
+}
+
+.bg-rainbow2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
+  animation-play-state: var(--playState);
+}
+
+.bg-rainbow3 {
+  animation-duration: 11s;
+  animation-play-state: var(--playState);
+}
+
+@keyframes slide {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(25%); }
+}
+
+
+
+.perfect {
+  /* Make the text large and responsive */
+ font-size: 100px !important; 
+  font-weight: 900;
+  font-family: "Open Sans", sans-serif;
+  color: #1fac00;
+  position: relative;
+  padding: 3rem; /* Space inside the white box */
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  line-height: 1.3;
+}
+
+
+
+/* When the password is correct, we flip these properties */
+
+#login-zone {
+  margin-top: 2rem;
+  z-index: 10001;
+}
+
+/* Hide the wallet until password is correct */
+.reveal-ready {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* The 'Drop Off' Animation for the words */
+.drop-off .char {
+  animation: fall-away 1s forwards !important;
+}
+
+@keyframes fall-away {
+  to {
+    transform: translateY(120vh) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Password Window Styling */
+#password-window {
+  
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 15px;
+  z-index: 9998;
+}
+
+#pass-input {
+  padding: 10px;
+  background: transparent;
+  border:#0a0a0a;
+  border-width: 2px;
+  color:black;
+  font-size:small;
+  border-radius: 5px;
+  border: 1px;
+  border-style: inset;
+}
+
+/* 1. Base Letter Entry */
+.perfect .char {
+  position: relative;
+  display: inline-block;
+  animation: slide-down 1s cubic-bezier(0.75, 0, 0.25, 1) both;
+  animation-delay: calc(var(--delay) + (0.1s * var(--char-index)));
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100%); }
+}
+
+/* 2. Unified Falling Logic for all words */
+.perfect .char:before,
+.perfect .char:after {
+  content: attr(data-char);
+  position: absolute;
+  top: 0; 
+  left: 0;
+  visibility: visible;
+  color: #9933ff;
+  overflow: hidden;
+  height: 60%;
+  animation: fall 7.5s both infinite;
+  animation-delay: calc(5s + -0.2s * (var(--char-total) - var(--char-index)));
+}
+
+/* The "Split" effect */
+.perfect .char:after {
+  height: 2.2em;
+  transform: translateY(0.11em);
+  clip-path: polygon(-100% 37%, 100% 37%, 100% 100%, -100% 100%);
+}
+
+@keyframes fall {
+  0%, 20% { transform: none; }
+  70% { transform: translateY(100vh) rotate(-0.5turn); opacity: 1; }
+  71% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 3. Drop-Off Reveal (Triggered by Login) */
+.drop-off .char {
+  animation: fall-away 1s forwards !important;
+}
+
+@keyframes fall-away {
+  to {
+    transform: translateY(120vh) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.hidden-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  z-index: 5000; /* Ensure it's above the wallet dashboard */
+  
+  justify-content: center;
+  align-items: center;
+   top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  transition: opacity 0.5s ease;
+  /* Hidden State */
+  opacity: 0;
+  pointer-events: none; 
+
+  align-items: center;
+  transition: opacity 0.5s ease;
+  display: block !important; 
+}
+
+/* Triggered State */
+.hidden-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-form {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-left: 10px solid  #66cc33;
+  position: relative;
+  background: white; /* Matches your .content class style */
+
+  margin: auto !important; 
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+}
+
+/* Container for alignment */
+.custom-dropdown-container {
+    width: 100%;
+    font-family: inherit;
+}
+
+/* The box the user clicks */
+#selected-asset-display {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* The actual list of coins */
+#crypto-list {
+    display: none; /* Hidden by default */
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Each coin in the list */
+.crypto-option {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+/* Visually highlight when the audio 'Bitcoin' or 'Ethereum' plays */
+.crypto-option:hover {
+    background-color: #f0f0f0;
+    color: #66cc33; /* Matches your wallet's green theme */
+}
+
+.crypto-option:last-child {
+    border-bottom: none;
+}
+
+/******* CSS FOR SEARCH AND HELP *******/
+
+/* 1. BUTTON FIX: Ensures double-click registers without highlighting text */
+#scan-btn {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    transition: transform 0.1s active;
+}
+
+#scan-btn:active {
+    transform: scale(0.98); /* Slight click feedback */
+}
+
+/* 2. THE SEARCH CONTAINER */ 
+#google-search-container { 
+    display: none; /* Hidden by default */ 
+    margin-top: 20px; 
+    padding-top: 20px; 
+    border-top: 2px dashed rgba(102, 204, 51, 0.3); 
+    /* slideDown is the name used in your JS/HTML */
+    animation: slideDown 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+} 
+
+/* 3. CLASS TO SHOW VIA JS - !important ensures it beats any 'hidden' utility classes */ 
+#google-search-container.is-visible { 
+    display: block !important; 
+} 
+
+/* 4. RESULT BOX - The "Console" look */ 
+#google-result-box { 
+    margin-top: 15px; 
+    padding: 20px; 
+    background: #f4f4f4; 
+    border-radius: 12px; 
+    font-family: 'Courier New', monospace; 
+    font-size: 0.95rem; 
+    color: #121212; 
+    line-height: 1.5; 
+    border-left: 5px solid #66cc33; 
+    min-height: 50px; /* Keeps layout stable during search */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+} 
+
+/* 5. ANIMATION: Subtle drop and fade */ 
+@keyframes slideDown { 
+    from { 
+        opacity: 0; 
+        transform: translateY(-15px); 
+    } 
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+/* 6. LAYOUT UTILITIES */
+.zone-row { 
+    display: flex; 
+    width: 100%; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 10px;
+} 
+
+#close-search-internal { 
+    border-left: 8px solid #00ff87 !important; 
+}
+
+/* Optional: styling the input to match the panel */
+#google-input:focus {
+    outline: none;
+    border-color: #66cc33;
+    box-shadow: 0 0 8px rgba(102, 204, 51, 0.2);
+}
+
+/*********** SEARCH AND HELP ENDS ****************/
+
+/************ STEALTH SECURITY MODE ***************/
+/*Blurs the balance value on the Balance Panel and disables the double click **/
+body.stealth-active .value, 
+body.stealth-active .balance-btn .value,
+body.stealth-active input[type="number"],
+body.stealth-active #preview-balance {
+    filter: blur(12px);
+    transition: filter 0.4s ease; /* Makes the blur look high-tech */
+    user-select: none; /* Prevents users from highlighting text to see it */
+}
+
+
+
+
+
