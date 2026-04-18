@@ -14,15 +14,27 @@
 3. Spatial Logic: Ensuring buttons are large and easy to find by touch
 
 ---
+### 📱 Mobile Browser Comparison (iOS)
 
+The following table highlights the behavioral differences between Safari and Chrome on iPad and iPhone devices:
+
+| Feature | Safari (iOS) | Chrome (iOS) |
+| :--- | :--- | :--- |
+| **Panel Alignment** | ✅ Centered Automatically for both browsers | 
+| **PDF Behavior** | ❌  **Blocked** (Safari iOS) |
+| **PDF Behavior** | ✅ **Opens Automatically** (Google Chrome) |
+| **Audio** | ❌ Blocked on panel buttons |  ❌ Audio is inconsistent with both browsers.
+| **iPad / Tablets** |  ❌ Partial | **Touch interaction** However, panel buttons and audio may be disabled depending on browser "Pop-up Blocker" settings. |
+| **iPhone (iOS)** |  ❌ Partial | **Mobile touch interaction** Spatial awareness is active, but audio is blocked in all pop up panels, and PDF viewers can obstruct panel interactions. This may be an iPhone settings issue.|
+
+
+### 📱 Browser Compatibility on Macbook Air
 | Browser / Device | Status | Performance & Alignment Notes |
 | :--- | :--- | :--- |
 | **Safari** | ✅ Optimized | **Center Aligned.** Honors the spatial layout perfectly; **Safari is the only browser that centers all panels correctly in the viewport.** |
 | **Google Chrome** | ✅ Optimized | **Right Aligned.** Panels **do not open in the center**; they default to the right side of the screen. |
 | **Microsoft Edge** | ✅ Optimized | **Right Aligned.** Mirrors Chromium behavior; panels **do not center** and appear on the right. |
 | **Firefox** | ✅ Optimized | **Right Aligned.** Panels **do not open in the center**; instead, the viewport renders the panel on the right. |
-| **iPad / Tablets** | ✅ Optimized | High-performance interaction with touch-to-identify functionality. |
-| **iPhone (iOS)** | ✅ Compatible | Optimized for quick-access mobile navigation and spatial awareness. |
 
 
 *   **Mitigation:** I utilized specific flex-box overrides and container constraints to ensure that regardless of the alignment, the "touch targets" remain large and accessible for the user.
