@@ -49,7 +49,7 @@ A core feature of APEX is immediate audible feedback. However, modern browsers h
 > "According to both MDN Web Docs and Chrome's Autoplay Policy, a website cannot play unmuted audio upon page arrival via events like hover or mouseenter until a user gesture (such as a click or tap) has occurred first." 
 > — **[MDN Web Docs: Autoplay Policy](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay)**
 
-*  **The APEX hurdles:**  To overcome this hurdle, I added style="cursor: pointer; to the splash container: (<div id="splash-container"  style="cursor: pointer;">)  This unlocks the browser's audio context but requires the user to click anywhere on the screen to initiate the audio. Once this link is established, all subsequent `mouseenter` events, hovers, or spatial sounds arepermitted to function seamlessly across the app. 
+*  **The APEX hurdles:**  To overcome this hurdle, I added style="cursor: pointer; to the splash container: `<div id="splash-container"  style="cursor: pointer;">` This unlocks the browser's audio context but requires the user to click anywhere on the screen to initiate the audio. Once this link is established, all subsequent `mouseenter` events, hovers, or spatial sounds are permitted to function seamlessly across the app. 
 
 
 *  **The Background:** The animated background was adopted by a lesson on web.dev: https://web.dev/learn/accessibility/motion. I took the SCSS code and used AI to convert the code to CSS, then I used the html code to apply the animated background and added a reveal logic to reveal the audio wallet using log-in access. Password demo.
@@ -58,7 +58,7 @@ A core feature of APEX is immediate audible feedback. However, modern browsers h
 ### 2. The Dropdown Audio Dilemma: `<option>` vs. `<li>` or `<a>`
 A primary hurdle in creating an accessible sensory menu was the limitation of standard HTML forms. Standard HTML `<select>` and `<option>` elements are typically rendered by the Operating System's UI layer rather than the browser's document flow. 
 
-I had to replace native elements with **Dropdowns** using `<ul>` and `<li>` tags. Unlike standard options, `<li>` and `<a>` tags are true DOM elements that support full event listeners with audio function <option> did not. However, I still kept a drop down using <option> for the voice preferences on the wallet because it was the easiest to integrate in the main wallet app page.
+I had to replace native elements with **Dropdowns** using `<ul>` and `<li>` tags. Unlike standard options, `<li>` and `<a>` tags are true DOM elements that support full event listeners with audio function `<option>` did not. However, I still kept a drop down using `<option>` for the voice preferences on the wallet because it was the easiest to integrate in the main wallet app page.
 
 *   **The Conflict:** Because they are not part of the standard browser DOM, these native elements **do not trigger `mouseenter`, `hover`, or `touchstart` events.** This rendered them "silent" to users attempting to explore the screen via touch or mouse movement. While the UI remained functional for making a selection, it failed to provide the necessary audible announcement required to access the "vocal preview preference".
 
