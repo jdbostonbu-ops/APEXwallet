@@ -81,6 +81,7 @@ const fetchPrices = async () => {
     ]);
     // Prices are injected directly into the DOM via ID selectors
 };
+```
 
 
 ## 🚀 Key Features
