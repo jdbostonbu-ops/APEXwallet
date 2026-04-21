@@ -7,6 +7,11 @@
 
 **APEX Audio Wallet:** [Visit APEXwallet](https://jdbostonbu-ops.github.io/APEXwallet/)
 
+<div align="center">
+  <img src="APEXWallet.gif" width="100%" alt="APEX Audio Wallet UI Demo">
+  <p><strong>APEX Audio Wallet illustration</strong></p>
+</div>
+
 **APEX** is an audio demo to illustrate an audio wallet created to explore and push the boundaries of **Web Accessibility (A11y)** for visually impaired or visually challenged individuals. By moving away from standard screen-reader reliance, APEX implements a "Sound-First" architecture where navigation is based on spatial memory, high-contrast visuals, and immediate audible feedback. The project serves as a technical exploration into how financial tools can be made more inclusive and intuitive through immersive, non-visual cues.
 
 1. Vocal Guidance: Using speech instead of just visual icons.
