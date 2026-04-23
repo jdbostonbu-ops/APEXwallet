@@ -1,5 +1,5 @@
 # APEX Audio Wallet
-
+While APEX currently utilizes high-quality static audio assets, the logic for Dynamic AI Voice Synthesis is fully demonstrated in my sister project, SolveSync. This shows how the APEX ecosystem can scale to include real-time, AI-generated financial reporting.
 
 **👤 Author:** Jacqueline  
 
